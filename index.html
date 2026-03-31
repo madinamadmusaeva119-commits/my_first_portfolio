@@ -27,6 +27,12 @@
                               li.textContent = task;
                               li.onclick = function(){
                                 li.style.textDecoration = "line-through";};
+                              let deleteBtn = document.createElement("button");
+                              deleteBtn.onclick = function(){
+                                      li.remove();
+                              };
+                              li.appendChild(deleteBtn);
+                              
                               document.getElementByld("taskList"}.appendChild(li);
                               input.value ="";
                              }
