@@ -12,7 +12,24 @@
 <li>Project 1: To-Do App (in progress)</li>
 </li>
 </ul>
-
+<pre>        My To-Do List     </pre>
+  <input type="text"
+    id="taskinput"
+    placeholder="Enter a task">
+  <button
+    onclick="addTask()">Add</button>
+  <ul id="taskList"></ul>
+  <script> function addTask(){let input = document.getElementByld("taskinput");
+                              let task = input.value;
+                              let li = document.createElement("li");
+                              li.textContent = task;
+                              li.onclick = function(){
+                                li.style.textDecoration = "line-through";};
+                              document.getElementByld("taskList"}.appendChild(li);
+                              input.value ="";
+                             }
+  </script>
+  
 <h2>Contact</h2>
 <p>Email:madinamadmusaeva119@gmail.com</p>
 </body>
