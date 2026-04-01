@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>About Me</title>
+
+  <!-- Шрифт -->
+  <link href="https://fonts.googleapis.com/css?family=Krub:400,700" rel="stylesheet">
+
+  <!-- Иконки -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="ds-top"></div>
+
+  <div class="avatar-holder">
+    <img src="https://via.placeholder.com/150" alt="avatar">
+  </div>
+
+  <div class="name">
+    <a href="#" target="_blank">Madmusayeva Madina</a>
+    <h6><i class="fas fa-users"></i> <span class="followers">119</span></h6>
+  </div>
+
+  <div class="button">
+    <a href="#" class="btn" onclick="follow()">Follow <i class="fas fa-user-plus"></i></a>
+  </div>
+
+  <div class="ds-info">
+    <div class="ds">
+      <h6>Pens</h6>
+      <p>0</p>
+    </div>
+    <div class="ds">
+      <h6>Projects</h6>
+      <p>5</p>
+    </div>
+    <div class="ds">
+      <h6>Posts</h6>
+      <p>2</p>
+    </div>
+  </div>
+
+  <div class="ds-skill">
+    <h6>Skills</h6>
+
+    <div class="skill">
+      <h6><i class="fab fa-html5"></i> HTML</h6>
+      <div class="bar html">65%</div>
+    </div>
+
+    <div class="skill">
+      <h6><i class="fab fa-css3-alt"></i> CSS</h6>
+      <div class="bar css">70%</div>
+    </div>
+
+    <div class="skill">
+      <h6><i class="fab fa-js"></i> JavaScript</h6>
+      <div class="bar js">50%</div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+body{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+  background: #202020;
+  font-family: 'Krub', sans-serif;
+}
+
+.card {
+  width: 260px;
+  height: 420px;
+  background: #151515;
+  border-radius: 10px;
+  margin: 100px auto;
+  position: relative;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.ds-top {
+  height: 80px;
+  background: crimson;
+}
+
+.avatar-holder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: -50px auto 10px;
+  border: 5px solid #151515;
+}
+
+.avatar-holder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.name a:hover {
+  color: crimson;
+}
+
+.button {
+  margin: 10px;
+}
+
+.btn {
+  padding: 6px 20px;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.btn:hover {
+  background: crimson;
+}
+
+.ds-info {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.ds h6 {
+  color: crimson;
+  font-size: 12px;
+}
+
+.ds p {
+  font-size: 12px;
+}
+
+.ds-skill {
+  margin-top: 15px;
+  padding: 0 20px;
+}
+
+.ds-skill h6 {
+  color: crimson;
+  margin-bottom: 5px;
+}
+
+.skill {
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.skill h6 {
+  font-size: 10px;
+}
+
+.bar {
+  height: 6px;
+  background: crimson;
+  font-size: 8px;
+  text-align: right;
+  padding-right: 5px;
+}
+
+.html { width: 65%; }
+.css { width: 70%; }
+.js { width: 50%; }
+
+.following {
+  background: crimson;
+}
+let followers = 119;
+let isFollowing = false;
+
+function follow() {
+  const btn = document.querySelector(".btn");
+  const count = document.querySelector(".followers");
+
+  isFollowing = !isFollowing;
+
+  if (isFollowing) {
+    followers++;
+    btn.innerHTML = 'Following <i class="fas fa-user-times"></i>';
+  } else {
+    followers--;
+    btn.innerHTML = 'Follow <i class="fas fa-user-plus"></i>';
+  }
+
+  count.textContent = followers;
+  btn.classList.toggle("following");
+}
